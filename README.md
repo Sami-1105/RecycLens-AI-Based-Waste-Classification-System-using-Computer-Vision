@@ -1,52 +1,79 @@
-# Intelligent waste segregation system
-This project demonstrates waste detection using a YOLOv8 (You Only Look Once) object detection model. It identifies recyclable, non-recyclable, and hazardous waste items in a webcam stream.
+## RecycLens – AI-Based Waste Classification System using Computer Vision
 
-Our datasets used to train:
-https://universe.roboflow.com/ai-project-i3wje/waste-detection-vqkjo/model/3
+## Overview
+RecycLens is a Computer Vision-based system that classifies waste into categories such as plastic, metal, paper, and organic using deep learning. It helps promote proper waste segregation and environmental sustainability.
 
-Colab:
-https://colab.research.google.com/drive/1dHv5QUuz2NkkgzeKBoO4DLAhLg9mOrzv?usp=sharing
+## Features
+Upload or input waste images
+AI-based classification
+Supports multiple waste categories
+Fast prediction using trained model
+Easy-to-use interface
 
-Live:
-https://intelligent-waste-segregation-system.streamlit.app
-
-
-## Setup
-
-**Clone the Repository:**
-```bash
-git clone https://github.com/boss4848/waste-detection.git
-cd waste-detection
-```
-**Install Dependencies:**
-```bash
-pip install -r requirements.txt
-```
-**Run the Application**
-```bash
-streamlit run app.py
-```
-Open your web browser and navigate to the provided URL (usually http://localhost:8501). You will see the Waste Detection app.
+## How It Works
+Input image is provided
+Image is preprocessed
+CNN model extracts features
+Model predicts waste category
+Output is displayed
 
 ## Project Structure
+RecycLens/
+│── __pycache__/
+│── weights/                # Trained model files
+│── .gitignore
+│── app.py                  # Main application (API / UI logic)
+│── helper.py               # Helper functions (preprocessing, prediction)
+│── settings.py             # Configuration settings
+│── train.py                # Model training script
+│── requirements.txt        # Python dependencies
+│── packages.txt            # Additional packages (if needed)
+│── README.md
 
-- `app.py`: Main application file containing Streamlit code.
-- `helper.py`: Helper functions for waste detection using the YOLO model.
-- `settings.py`: Configuration settings, including the path to the YOLO model and waste types.
-- `train.py`: To train the model
 
-## Classifying Waste Items
+## Installation & Setup
+# Step 1: Clone the Repository
+git clone https://github.com/your-username/recyclens.git
+cd recyclens
+# Step 2: Create Virtual Environment (Recommended)
+python -m venv venv
 
-- **RECYCLABLE**=['cardboard_box','can','plastic_bottle_cap','plastic_bottle','reuseable_paper']
-- **NON_RECYCLABLE**=['plastic_bag','scrap_paper','stick','plastic_cup','snack_bag','plastic_box','straw','plastic_cup_lid','scrap_plastic','cardboard_bowl','plastic_cultery']
-- **HAZARDOUS**=['battery','chemical_spray_can','chemical_plastic_bottle','chemical_plastic_gallon','light_bulb','paint_bucket']
+Activate it:
 
-## Screenshots
+Windows:
+venv\Scripts\activate
+Mac/Linux:
+source venv/bin/activate
+# Step 3: Install Dependencies
+pip install -r requirements.txt
+If you are using extra system packages:
 
-![screenshot2](screenshot2.png)
+pip install -r packages.txt
+# Step 4: Run the Application
+python app.py
+# Step 5: Access the App
+Open browser
+Go to:
+http://localhost:5000
 
-## References
+(or port shown in terminal)
 
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [YOLO Documentation](https://github.com/ultralytics/yolov5)
+## Output Example
+Input: Plastic bottle
+Output: Plastic 
 
+## Modules Explanation
+app.py → Main app logic
+helper.py → Image processing + prediction
+train.py → Model training
+settings.py → Configurations
+weights/ → Stored trained model
+
+## Challenges Faced
+Similar-looking waste types
+Dataset imbalance
+Lighting variations
+
+## Author
+Samridhi Tyagi
+24MIM10091
